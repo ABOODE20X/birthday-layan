@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>عيد ميلاد ليان 🎉</title>
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle, #1a1a2e, #000);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    position: relative;
+    top: 40%;
+    font-size: 55px;
+    text-shadow: 0 0 20px pink, 0 0 40px gold;
+    z-index: 5;
+}
+
+.banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 35px;
+    letter-spacing: 12px;
+}
+
+.indomie {
+    position: absolute;
+    width: 70px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-100px) rotate(0deg); }
+    to { transform: translateY(110vh) rotate(360deg); }
+}
+
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px gold, 0 0 20px red, 0 0 30px pink;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    from { transform: scale(0); opacity: 1; }
+    to { transform: scale(6); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="banner">🎈🎉🎈🎉🎈🎉🎈</div>
+<h1>كل عام وانتي بخير يا ليان 💖🎂</h1>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5e5c0c6a3b.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(() => {
+    const fw = document.createElement("div");
+    fw.className = "firework";
+    fw.style.left = Math.random() * window.innerWidth + "px";
+    fw.style.top = Math.random() * window.innerHeight + "px";
+    document.body.appendChild(fw);
+    setTimeout(() => fw.remove(), 1000);
+}, 200);
+
+const indomieImg = "https://i.imgur.com/0Z8FQZB.png";
+setInterval(() => {
+    const img = document.createElement("img");
+    img.src = indomieImg;
+    img.className = "indomie";
+    img.style.left = Math.random() * window.innerWidth + "px";
+    img.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(img);
+    setTimeout(() => img.remove(), 8000);
+}, 500);
+</script>
+
+</body>
+</html>
